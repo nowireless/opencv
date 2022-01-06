@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os, sys
 import argparse
@@ -229,6 +229,7 @@ class Builder:
             BUILD_DOCS="OFF",
             BUILD_ANDROID_EXAMPLES=("OFF" if self.no_samples_build else "ON"),
             INSTALL_ANDROID_EXAMPLES=("OFF" if self.no_samples_build else "ON"),
+            OPENCV_EXTRA_MODULES_PATH="/content/opencv_contrib/modules",
         )
         if self.ninja_path != 'ninja':
             cmake_vars['CMAKE_MAKE_PROGRAM'] = self.ninja_path
